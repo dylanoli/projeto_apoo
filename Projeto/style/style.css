@@ -1,0 +1,137 @@
+body
+{
+    margin: 0;
+    background-color:#F8F8F8;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(129, 129, 129);
+}
+textarea
+{
+    position: relative;
+    width: 100%;
+    border-radius: 7px;
+    outline: none;
+    background-color: #F8F8F8;
+}
+select
+{
+    background-color: #F8F8F8;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(206, 206, 206);
+    outline: none;
+    margin-left: 10px;
+    border-radius: 7px;
+    height: 25px;
+    width: 300px;
+}
+#sideMenu
+{
+    background-color: rgb(66, 145, 69);
+    float: left;
+    height: 100%;
+    width: 20%;
+    position: fixed;
+}
+#mainScreen
+{
+    float: right;
+    margin-left: 20%;
+    margin-bottom: 0px;
+    width: 80%;
+    background-color:#F8F8F8;
+}
+#sideMenuHeader
+{
+    color: #FFFCFC;
+    text-align: center;
+    font-size: 13pt;
+    background-color: #4CAF50;
+}
+#titleBar{
+    color: #FFFCFC;
+    padding: 10px;
+    font-size: 14pt;
+    background-color:#4B924E;
+}
+#form
+{
+    position: relative;
+    margin: 0% 10%;
+    background-color:#FFFCFC;
+    padding: 10px 80px;
+}
+#fileMenu
+{
+    background-color: #F8F8F8;
+    border-radius: 7px;
+}
+#fileHeader
+{
+    background-color: #555555;
+    color: rgb(218, 218, 218);
+    font-size: 11pt;
+    padding: 5px;
+    border-radius: 7px 7px 0px 0px;
+}
+#fileBody
+{
+    margin: 20px;
+}
+.topMenu
+{
+    position: relative;
+    width: 100%;
+    line-height: 60px; 
+}
+.field
+{
+    padding: 1px;
+}
+.selectFieldForm
+{
+    width: 130px;
+}
+.inputfield
+{
+    background-color: #F8F8F8;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: rgb(206, 206, 206);
+    outline: none;
+    float: right;
+    position: relative;
+    width: 70%;
+    height: 25px;
+}
+.inputdate
+{
+    background-color: #F8F8F8;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(206, 206, 206);
+    outline: none;
+    margin-left: 10px;
+    float: right;
+    height: 25px;
+    text-align: right;
+    border-radius: 7px;
+}
+.buttonMain
+{
+    background-color: #32AAAA;
+    border-width: 0px;
+    color: #F8F8F8;
+    padding: 10px;
+    width: 100px;
+    outline: none;
+}
+.buttonMain:hover
+{
+    background-color: rgb(75, 185, 185);
+
+}
+.buttonMain:active
+{
+    background-color: rgb(130, 204, 204);
+}
