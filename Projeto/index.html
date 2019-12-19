@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel ="stylesheet" href="style/style.css">
+    <script src="scripts/script.js"></script>
 </head>
 <body>
     <div id="sideMenu">
@@ -14,32 +15,31 @@
         <div id="titleBar">Cadastro de condicionantes</div>
         <div id="form">
             <br>
-            <br>
             <div class="field">
                     <p>
                         Número da condicionante: *
-                        <input class="inputfield" placeholder="Ex: 12">
+                        <input id = "idCond" class="inputfield" placeholder="Ex: 12" >
                     </p>
             </div>
             <div class="field">
                     <p>
                         Nome da condicionante: *
-                        <input class="inputfield" placeholder="Ex: Instalação de bomba de combustível">
+                        <input id = "nomeCond"class="inputfield" placeholder="Ex: Instalação de bomba de combustível.">
                     </p>
             </div>
             <div class="field">
                 <p>
                     <div style="float: left;">
                         Tipo de condicionate: *
-                        <select class="selectFieldForm">
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="2">Option 2</option>
+                        <select id = "tipoCond" class="selectFieldForm">
+                            <option value="Preventiva">Preventiva</option>
+                            <option value="Mitigadora">Mitigadora</option>
+                            <option value="Compensatória">Compensatória</option>
                         </select>
                     </div>
                     <div style="float: right;">
                         Prazo para a condicionante: *
-                        <input class="inputdate" type="date"> 
+                        <input id = "dataCond" class="inputdate" type="date"> 
                     </div>
                 </p>
             </div>
@@ -47,27 +47,23 @@
                 <br>
                 <p>
                     Descrição: *
-                    <textarea placeholder="Texo igual ao contido na licença" rows="7"></textarea>
+                    <textarea id = "descricaoCond" placeholder="Texo igual ao contido na licença." rows="7"></textarea>
                 </p>
             </div>
             <div class="field">
                 <div id="fileMenu">
                     <div id = "fileHeader">Documento requisitado para conclusão
-                        <input type="checkbox" checked="checked" style="float: right;">
+                        <input id = "checkedFile"type="checkbox" checked="checked" style="float: right;">
                     </div>
                     <div id = "fileBody">
                         <div>
-                            Tipo de condicionate: *
-                            <select>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="2">Option 2</option>
-                            </select>
+                            Documento: *  Insira um arquivo
+                            <button>...</button>
                         </div>
                         <div>
                             <p>
-                                Descrição: *
-                                <textarea placeholder="Texo igual ao contido na licença" rows="7"></textarea>
+                                Instruções adicionais:
+                                <textarea placeholder="Instruções adicionais para a entrega do documento." rows="7"></textarea>
                             </p>
                         </div>
                     </div>
@@ -75,7 +71,7 @@
                 </div>
             </div>
             <div class="field">
-                <button class = "buttonMain">Adicionar</button>
+                <button class = "buttonMain" onclick="adicionarCondicionante()">Adicionar</button>
             </div>
         </div>
     </div>

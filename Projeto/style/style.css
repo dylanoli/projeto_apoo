@@ -1,3 +1,4 @@
+/* 3D723F */
 body
 {
     margin: 0;
@@ -40,6 +41,8 @@ select
     margin-bottom: 0px;
     width: 80%;
     background-color:#F8F8F8;
+    position: fixed;
+    height: 100%;
 }
 #sideMenuHeader
 {
@@ -57,9 +60,13 @@ select
 #form
 {
     position: relative;
-    margin: 0% 10%;
+    margin: 0% 5%;
     background-color:#FFFCFC;
     padding: 10px 80px;
+    height: 1000px;
+    overflow-y: scroll;
+    position: fixed;
+    height: 550px;
 }
 #fileMenu
 {
@@ -94,14 +101,23 @@ select
 }
 .inputfield
 {
-    background-color: #F8F8F8;
+    background-color:#FFFCFC;
     border-style: solid;
     border-width: 0px 0px 2px 0px;
     border-color: rgb(206, 206, 206);
     outline: none;
     float: right;
     position: relative;
-    width: 70%;
+    width: 65%;
+    height: 25px;
+}
+.inputfieldMin
+{
+    background-color: #F8F8F8;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: rgb(206, 206, 206);
+    outline: none;
     height: 25px;
 }
 .inputdate
@@ -123,8 +139,9 @@ select
     border-width: 0px;
     color: #F8F8F8;
     padding: 10px;
-    width: 100px;
+    width: 120px;
     outline: none;
+    float: right;
 }
 .buttonMain:hover
 {
