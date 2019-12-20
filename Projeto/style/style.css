@@ -29,7 +29,7 @@ select
 }
 #sideMenu
 {
-    background-image: url("images/background.jpg");
+    background-image: url("../img/background.jpg");
     float: left;
     height: 100%;
     width: 20%;
@@ -51,6 +51,7 @@ select
     color: #FFFCFC;
     text-align: center;
     font-size: 13pt;
+    line-height: 50px;
     background-color: #4CAF50;
 }
 #titleBar{
@@ -102,7 +103,7 @@ select
     background-color: #555555;
     color: rgb(218, 218, 218);
     font-size: 11pt;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 7px 7px 0px 0px;
 }
 #fileBody
@@ -113,7 +114,8 @@ select
 {
     position: relative;
     width: 100%;
-    line-height: 60px; 
+    height: 50px; 
+    padding: 5px;
 }
 .field
 {
@@ -205,4 +207,64 @@ select
     color: #F8F8F8;
     margin-left: 60px;
     transform: translateY(-12px);
+}
+.sideMenuSubOp
+{
+    position: relative;
+    color: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    background-color: rgba(36, 136, 39, 0.329);
+    outline: none;
+    border-width: 0ch;
+}
+.sideMenuSubOp:hover
+{
+    background-color: rgba(65, 160, 67, 0.37);
+}
+.sideMenuSubOp:active
+{
+    background-color: rgba(96, 194, 98, 0.329);
+}
+.sideMenuSubOp i
+{
+    float: left;
+    margin-left: 40px;
+}
+.sideMenuSubOp h4
+{
+    position: absolute;
+    color: #F8F8F8;
+    margin-left: 90px;
+    transform: translateY(-12px);
+}
+.btnLogin
+{
+    border-width: 0px;
+    background-color: #F8F8F8;
+    outline: none;
+    position: relative;
+    float: right;
+    margin-right: 20px;
+}
+.btnLogin:hover
+{
+    background-color: rgb(236, 236, 236);
+}
+.btnLogin:active
+{
+    background-color: rgb(197, 197, 197);
+}
+.btnLogin i
+{
+    float: right;
+    color: #6DBA4A;
+    font-size: 33px;
+    margin-left: 5px;
+    transform: translateY(9px);
+}
+.btnLogin h4
+{
+    float: left;
+    color: rgb(59, 59, 59);
 }
