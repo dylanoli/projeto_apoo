@@ -1,7 +1,8 @@
-/* 3D723F */
+
 body
 {
     margin: 0;
+    font-size: 11pt;
     background-color:#F8F8F8;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(129, 129, 129);
@@ -28,12 +29,13 @@ select
 }
 #sideMenu
 {
-    background-color: rgb(66, 145, 69);
+    background-image: url("images/background.jpg");
     float: left;
     height: 100%;
     width: 20%;
     position: fixed;
 }
+
 #mainScreen
 {
     float: right;
@@ -58,6 +60,9 @@ select
     line-height: 20px;
     background-color:#4B924E;
 }
+#titleBar h4{
+    margin: 10px 60px;
+}
 #btnback
 {
     color: #F8F8F8;
@@ -66,6 +71,7 @@ select
     border-radius: 50%;
     font-size: 30px;
     height: 40px;
+    float: left;
     border-width: 0cm;
 }
 #btnback:hover
@@ -84,8 +90,7 @@ select
     padding: 10px 80px;
     height: 1000px;
     overflow-y: scroll;
-    position: fixed;
-    height: 550px;
+    height: 80%;
 }
 #fileMenu
 {
@@ -116,7 +121,7 @@ select
 }
 .selectFieldForm
 {
-    width: 130px;
+    width: 120px;
 }
 .inputfield
 {
@@ -170,4 +175,34 @@ select
 .buttonMain:active
 {
     background-color: rgb(130, 204, 204);
+}
+.sideMenuOp
+{
+    position: relative;
+    color: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    background-color: #418D44;
+    outline: none;
+    border-width: 0ch;
+}
+.sideMenuOp:hover
+{
+    background-color: rgb(79, 163, 82);
+}
+.sideMenuOp:active
+{
+    background-color: rgb(122, 185, 124);
+}
+.sideMenuOp i
+{
+    float: left;
+    margin-left: 10px;
+}
+.sideMenuOp h4
+{
+    position: absolute;
+    color: #F8F8F8;
+    margin-left: 60px;
+    transform: translateY(-12px);
 }

@@ -9,13 +9,21 @@
         <div class="topMenu" id = "sideMenuHeader">
             Gerenciamento Ambiental
         </div>
+        <button class="sideMenuOp">
+            <i class="material-icons">home</i>
+            <h4>Página Inicial</h4>
+        </button>
+        <button class="sideMenuOp">
+            <i class="material-icons">home</i>
+            <h4>Página Inicial</h4>
+        </button>
     </div>
     <div id="mainScreen">
         <div class="topMenu">Dylan
         </div>
         <div id="titleBar">
             <button class="material-icons" id="btnback">keyboard_arrow_left</button>
-            Cadastro de condicionantes
+            <h4>Cadastro de condicionantes</h4>
         </div>
         <div id="form">
             <br>
@@ -41,8 +49,8 @@
                             <option value="Compensatória">Compensatória</option>
                         </select>
                     </div>
-                    <div style="float: right;">
-                        Prazo para a condicionante: *
+                    <div style="float: right; margin-left: 6px;">
+                        <div style="float: left; transform: translateY(30%);">Prazo para a condicionante: *</div>
                         <input id = "dataCond" class="inputdate" type="date"> 
                     </div>
                 </p>
@@ -57,17 +65,17 @@
             <div class="field">
                 <div id="fileMenu">
                     <div id = "fileHeader">Documento requisitado para conclusão
-                        <input id = "checkedFile"type="checkbox" checked="checked" style="float: right;">
+                        <input id = "checkedFile"type="checkbox" checked="false" style="float: right;">
                     </div>
                     <div id = "fileBody">
                         <div>
-                            Documento: *  Insira um arquivo
-                            <button>...</button>
+                            Tipo de documento: *
+                            <input id = "formatoCond" class="inputfield" placeholder="Ex: .pdf, .rar, .docs, .xml"> 
                         </div>
                         <div>
                             <p>
                                 Instruções adicionais:
-                                <textarea placeholder="Instruções adicionais para a entrega do documento." rows="7"></textarea>
+                                <textarea id = "instrucoesCond" placeholder="Instruções adicionais para a entrega do documento." rows="7"></textarea>
                             </p>
                         </div>
                     </div>

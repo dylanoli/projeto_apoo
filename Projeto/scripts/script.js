@@ -1,3 +1,4 @@
+
 function adicionarCondicionante()
 {
     let condicionante = 
@@ -7,7 +8,9 @@ function adicionarCondicionante()
         tipo: document.getElementById("tipoCond").value,
         prazo: document.getElementById("dataCond").value,
         descricao: document.getElementById("descricaoCond").value,
-        arquivo: null,
+        arquivo_obrigatorio: document.getElementById("checkedFile").checked,
+        tipo_arquivo: document.getElementById("formatoCond").value,
+        desc_arquivo: document.getElementById("instrucoesCond").value,
         status: false
     };
 
@@ -18,27 +21,12 @@ function adicionarCondicionante()
 }
 
 function validate(condicionante)
-{
-    let checkedFile = document.getElementById("checkedFile").checked;
-    console.log("checkedFile: " + checkedFile);
-    // se o checkedFile estiver marcado e nao houver arquivo, o resultado eh false,
-    // se o checkedFile nao estiver marcado, o resultado eh true
-    if(checkedFile)
-    {
-        if(condicionante.arquivo == null)
-            checkedFile = false;
-    }
-    else
-    {
-        checkedFile = true;
-    }
-
+{ 
     if(condicionante.id == "" || 
     condicionante.nome == "" ||
     condicionante.prazo == "" ||
     condicionante.descricao == "" ||
-    isNaN((Number)(condicionante.id)) ||
-    !checkedFile)
+    isNaN((Number)(condicionante.id)))
     {
         return false;
     }
