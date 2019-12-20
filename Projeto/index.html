@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <head>
-    <link rel ="stylesheet" href="style/style.css">
+    <link rel ="stylesheet" href="css/style.css">
+    <meta charset="UTF-8"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="scripts/script.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
     <div id="sideMenu">
@@ -26,65 +27,69 @@
             <h4>Cadastro de condicionantes</h4>
         </div>
         <div id="form">
-            <br>
-            <div class="field">
-                    <p>
-                        Número da condicionante: *
-                        <input id = "idCond" class="inputfield" placeholder="Ex: 12" >
-                    </p>
-            </div>
-            <div class="field">
-                    <p>
-                        Nome da condicionante: *
-                        <input id = "nomeCond"class="inputfield" placeholder="Ex: Instalação de bomba de combustível.">
-                    </p>
-            </div>
-            <div class="field">
-                <p>
-                    <div style="float: left;">
-                        Tipo de condicionate: *
-                        <select id = "tipoCond" class="selectFieldForm">
-                            <option value="Preventiva">Preventiva</option>
-                            <option value="Mitigadora">Mitigadora</option>
-                            <option value="Compensatória">Compensatória</option>
-                        </select>
-                    </div>
-                    <div style="float: right; margin-left: 6px;">
-                        <div style="float: left; transform: translateY(30%);">Prazo para a condicionante: *</div>
-                        <input id = "dataCond" class="inputdate" type="date"> 
-                    </div>
-                </p>
-            </div>
-            <div class="field">
+            <form method="POST" action="php/control/cond_map.php">
                 <br>
-                <p>
-                    Descrição: *
-                    <textarea id = "descricaoCond" placeholder="Texo igual ao contido na licença." rows="7"></textarea>
-                </p>
-            </div>
-            <div class="field">
-                <div id="fileMenu">
-                    <div id = "fileHeader">Documento requisitado para conclusão
-                        <input id = "checkedFile"type="checkbox" checked="false" style="float: right;">
-                    </div>
-                    <div id = "fileBody">
-                        <div>
-                            Tipo de documento: *
-                            <input id = "formatoCond" class="inputfield" placeholder="Ex: .pdf, .rar, .docs, .xml"> 
-                        </div>
-                        <div>
-                            <p>
-                                Instruções adicionais:
-                                <textarea id = "instrucoesCond" placeholder="Instruções adicionais para a entrega do documento." rows="7"></textarea>
-                            </p>
-                        </div>
-                    </div>
-                    
+                <div class="field">
+                        <p>
+                            Número da condicionante: *
+                            <input id = "idCond" name = "id_cond" class="inputfield" placeholder="Ex: 12" >
+                        </p>
                 </div>
-            </div>
-            <div class="field">
-                <button class = "buttonMain" onclick="adicionarCondicionante()">Adicionar</button>
-            </div>
+                <div class="field">
+                        <p>
+                            Nome da condicionante: *
+                            <input id = "nomeCond" name = "nomeCond" class="inputfield" placeholder="Ex: Instalação de bomba de combustível.">
+                        </p>
+                </div>
+                <div class="field">
+                    <p>
+                        <div style="float: left;">
+                            Tipo de condicionate: *
+                            <select id = "tipoCond" name="tipoCond" class="selectFieldForm">
+                                <option value="Preventiva">Preventiva</option>
+                                <option value="Mitigadora">Mitigadora</option>
+                                <option value="Compensatória">Compensatória</option>
+                            </select>
+                        </div>
+                        <div style="float: right; margin-left: 6px;">
+                            <div style="float: left; transform: translateY(30%);">Prazo para a condicionante: *</div>
+                            <input id = "dataCond" name="dataCond" class="inputdate" type="date"> 
+                        </div>
+                    </p>
+                </div>
+                <div class="field">
+                    <br>
+                    <p>
+                        Descrição: *
+                        <textarea id = "descricaoCond" name = "descricaoCond" placeholder="Texo igual ao contido na licença." rows="7"></textarea>
+                    </p>
+                </div>
+                <div class="field">
+                    <div id="fileMenu">
+                        <div id = "fileHeader">Documento requisitado para conclusão
+                            <input id = "checkedFile" name = "checkedFile" type="checkbox" checked="false" style="float: right;">
+                        </div>
+                        <div id = "fileBody">
+                            <div>
+                                Tipo de documento: *
+                                <input id = "formatoCond" name = "formatoCond" class="inputfield" placeholder="Ex: .pdf, .rar, .docs, .xml"> 
+                            </div>
+                            <div>
+                                <p>
+                                    Instruções adicionais:
+                                    <textarea id = "instrucoesCond" name = "instrucoesCond" placeholder="Instruções adicionais para a entrega do documento." rows="7"></textarea>
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="field">
+                    <!--Alteração feita para conectar o php com o codigo js-->
+                    <!--onclick="adicionarCondicionante()"-->
+                    <button class = "buttonMain" type = "submit" >Adicionar</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>
