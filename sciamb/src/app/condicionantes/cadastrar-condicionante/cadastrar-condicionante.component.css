@@ -1,0 +1,16 @@
+#titleBar{
+    color: #FFFCFC;
+    background-color:#4B924E;
+    height: 48px;
+    width: 100%;
+    position: fixed;
+}
+#titleBar h4{
+    margin-left: 60px ;
+}
+.content-conteiner
+{
+    float: right;
+    position: relative;
+    width: 80%;
+}
