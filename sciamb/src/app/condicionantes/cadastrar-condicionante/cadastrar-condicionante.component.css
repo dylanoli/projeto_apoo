@@ -9,14 +9,6 @@
     margin-left: 60px ;
     transform: translateY(-7px);
 }
-.btnLogin i
-{
-    float: right;
-    color: #6DBA4A;
-    font-size: 33px;
-    margin-left: 5px;
-    transform: translateY(9px);
-}
 .content-conteiner
 {
     float: right;
@@ -45,7 +37,6 @@
 }
 .main-space
 {
-    background-color: #32AAAA;
     position: fixed;
     transform: translateY(48px);
     width: 80%;
@@ -55,20 +46,8 @@
 {
     overflow-y: auto;
     width: 80%;
-    height: 100%;
+    height: 560px;
     margin: auto;
-}
-.boxc
-{
-    background-color: rgb(170, 50, 50);
-    width: 100%;
-    height: 601px;
-    margin: 0px;
-    padding: 0px;
-}
-.card-cond
-{
-    height: 601px;
 }
 .form-container {
     display: flex;
