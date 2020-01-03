@@ -17,16 +17,19 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatTableModule} from '@angular/material/table';
 
 import { SideMenuComponent } from './utils/side-menu/side-menu.component';
 import { TopMenuComponent } from './utils/top-menu/top-menu.component'
 import { CadastrarCondicionanteComponent } from './condicionantes/cadastrar-condicionante/cadastrar-condicionante.component';
+import { CadastrarLicencaComponent } from './licenca/cadastrar-licenca/cadastrar-licenca.component';
 @NgModule({
   declarations: [
     AppComponent,
     SideMenuComponent,
     TopMenuComponent,
-    CadastrarCondicionanteComponent
+    CadastrarCondicionanteComponent,
+    CadastrarLicencaComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { CadastrarCondicionanteComponent } from './condicionantes/cadastrar-cond
     MatChipsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSlideToggleModule 
+    MatSlideToggleModule,
+    MatTableModule
   ],
   providers: [
     MatDatepickerModule
