@@ -2,9 +2,56 @@
 <div class="content-conteiner">
     <app-top-menu></app-top-menu>
     <div id="titleBar">
-        <!-- <button mat-mini-fab aria-label="Example icon-button with a heart icon">
-            <mat-icon>keyboard_arrow_left</mat-icon>
-        </button> -->
+        <button class="material-icons" id="btnback">keyboard_arrow_left</button>
         <h4>Cadastro de condicionantes</h4>
+    </div>
+    <div class="main-space">
+        <div class="add-cond">
+            <div class = "boxc">ghjgh</div>
+            <!-- <mat-card class="card-cond">
+                <div class="form-container">
+                    <mat-form-field>
+                      <input matInput placeholder="Número da condicionante" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Nome da condicionante" required>
+                    </mat-form-field>
+                    <div>
+                        <mat-form-field style="float: left;">
+                            <mat-select placeholder="Tipo de condicionate" required>
+                              <mat-option *ngFor="let tipo of tipoCondicioante" value="tipo.value">{{tipo.viewValue}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <mat-form-field style="margin-left: 50px;" required>
+                            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
+                    </div>
+                    <mat-form-field>
+                      <textarea matInput placeholder="Descrição contida na licença" rows="3" required></textarea>
+                    </mat-form-field>
+                    <mat-card >
+                        <mat-card-header>
+                            <mat-card-title>Documento requisitado para conclusão</mat-card-title>
+                            <section>
+                                <mat-slide-toggle
+                                    [checked]="anexoChecked">
+                                </mat-slide-toggle>
+                              </section>
+                        </mat-card-header>
+                        <div class="form-container">
+                            <mat-form-field >
+                                <input matInput placeholder="Tipo de documento. Ex: .txt, .pdf, .xml" required>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <textarea matInput placeholder="Instruções adicionais" rows="3"></textarea>
+                            </mat-form-field>
+                        </div>
+                    </mat-card>
+                    <button mat-raised-button color="primary" class="buttonMain">Adicionar Condicionante</button>
+                </div>
+            </mat-card> -->
+        </div>
     </div>
 </div>
