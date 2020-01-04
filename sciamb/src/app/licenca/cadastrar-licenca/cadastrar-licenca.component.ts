@@ -5,6 +5,10 @@ export interface columnsShow
   name:string;
   view:string
 }
+export interface MenuFlow
+{
+  name:string;
+}
 export interface Condicionante
 {
   id: Number;
@@ -36,11 +40,18 @@ const ELEMENT_DATA: Condicionante[] = [
 
 export class CadastrarLicencaComponent {
   dataSource = ELEMENT_DATA;
-  columnsToDisplay: columnsShow[] = [
-    {name:'id',view:"Número"},
-    {name:'nome',view:"Nome"},
-    {name:'tipo',view:"Tipo"},
-    {name:'prazo',view:"Prazo"}
+  // columnsToDisplay: columnsShow[] = [
+  //   {name:'id',view:"Número"},
+  //   {name:'nome',view:"Nome"},
+  //   {name:'tipo',view:"Tipo"},
+  //   {name:'prazo',view:"Prazo"}
+  // ];
+  displayedColumns: string[] = [
+    'id','nome','tipo','prazo',"opt"
   ];
+  options: MenuFlow[] = [
+    {name:"Alterar"},{name:"Excluir"}
+  ];
+  
   expandedElement: Condicionante | null;
 }
