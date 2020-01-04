@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-export interface columnsShow
-{
-  name:string;
-  view:string
-}
 export interface MenuFlow
 {
   name:string;
@@ -40,17 +35,11 @@ const ELEMENT_DATA: Condicionante[] = [
 
 export class CadastrarLicencaComponent {
   dataSource = ELEMENT_DATA;
-  // columnsToDisplay: columnsShow[] = [
-  //   {name:'id',view:"Número"},
-  //   {name:'nome',view:"Nome"},
-  //   {name:'tipo',view:"Tipo"},
-  //   {name:'prazo',view:"Prazo"}
-  // ];
   displayedColumns: string[] = [
     'id','nome','tipo','prazo',"opt"
   ];
   options: MenuFlow[] = [
-    {name:"Alterar"},{name:"Excluir"}
+    {name:"Visualizar"},{name:"Alterar"},{name:"Excluir"}
   ];
   
   expandedElement: Condicionante | null;

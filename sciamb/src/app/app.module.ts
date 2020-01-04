@@ -26,6 +26,7 @@ import { TopMenuComponent } from './utils/top-menu/top-menu.component'
 import { CadastrarCondicionanteComponent } from './condicionantes/cadastrar-condicionante/cadastrar-condicionante.component';
 import { CadastrarLicencaComponent } from './licenca/cadastrar-licenca/cadastrar-licenca.component';
 import { GerenciarLicencaComponent } from './licenca/gerenciar-licenca/gerenciar-licenca.component';
+import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { GerenciarLicencaComponent } from './licenca/gerenciar-licenca/gerenciar
     TopMenuComponent,
     CadastrarCondicionanteComponent,
     CadastrarLicencaComponent,
-    GerenciarLicencaComponent
+    GerenciarLicencaComponent,
+    MenuPrincipalComponent
   ],
   imports: [
     BrowserModule,
