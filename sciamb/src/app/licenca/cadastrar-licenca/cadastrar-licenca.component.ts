@@ -1,21 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import { CadastrarCondicionanteComponent } from 'src/app/condicionantes/cadastrar-condicionante/cadastrar-condicionante.component';
+import {MatDialog} from '@angular/material/dialog';
+import {Condicionante} from 'src/app/bean/condicionante';
 export interface MenuFlow
 {
   name:string;
 }
-export interface Condicionante
-{
-  id: Number;
-  nome: string;
-  tipo: string;
-  prazo: Date;
-  descricao: string;
-  arquivo_obrigatorio: boolean;
-  tipo_arquivo: string;
-  desc_arquivo: string
-  status: boolean;
-};
+
 const ELEMENT_DATA: Condicionante[] = [
   {id:1,nome: "Controle da bomba", tipo: "Preventiva", prazo:new Date(2020,11,11), descricao: "Manter a bomba em boas condições", arquivo_obrigatorio:true,tipo_arquivo:".pdf",desc_arquivo:"Comprovante de manutenção feita",status:false},
   {id:2,nome: "Limpeza da água", tipo: "Preventiva", prazo:new Date(2022,11,11), descricao: "Manter a água limpa", arquivo_obrigatorio:true,tipo_arquivo:".pdf",desc_arquivo:"Comprovante de manutenção feita",status:false}
@@ -34,6 +26,7 @@ const ELEMENT_DATA: Condicionante[] = [
 })
 
 export class CadastrarLicencaComponent {
+
   dataSource = ELEMENT_DATA;
   displayedColumns: string[] = [
     'id','nome','tipo','prazo',"opt"
@@ -42,5 +35,9 @@ export class CadastrarLicencaComponent {
     {name:"Visualizar"},{name:"Alterar"},{name:"Excluir"}
   ];
   
-  expandedElement: Condicionante | null;
+  constructor(public dialog: MatDialog) {}
+  openCondicionante()
+  {
+    this.dialog.open(CadastrarCondicionanteComponent);
+  }
 }

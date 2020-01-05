@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CadastrarLicencaComponent } from 'src/app/licenca/cadastrar-licenca/cadastrar-licenca.component';
+import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 export interface Tipo {
   value: string;
   viewValue: string;
@@ -15,8 +17,10 @@ export class CadastrarCondicionanteComponent {
     {value: "compensatoria", viewValue: "Compensatória"}
   ];
   anexoChecked = true;
-  constructor()
+  constructor(
+    public dialogRef: MatDialogRef<CadastrarLicencaComponent>) {}
+  closeCondicionante()
   {
-    
+    this.dialogRef.close();
   }
 }

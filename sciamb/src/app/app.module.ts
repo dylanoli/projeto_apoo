@@ -20,6 +20,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { SideMenuComponent } from './utils/side-menu/side-menu.component';
 import { TopMenuComponent } from './utils/top-menu/top-menu.component'
@@ -27,6 +28,7 @@ import { CadastrarCondicionanteComponent } from './condicionantes/cadastrar-cond
 import { CadastrarLicencaComponent } from './licenca/cadastrar-licenca/cadastrar-licenca.component';
 import { GerenciarLicencaComponent } from './licenca/gerenciar-licenca/gerenciar-licenca.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
+import { routing } from './app.routing';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,9 +39,13 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
     GerenciarLicencaComponent,
     MenuPrincipalComponent
   ],
+  entryComponents:[
+    CadastrarCondicionanteComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    routing,
     MatButtonModule,
     MatCheckboxModule,
     FormsModule,
@@ -55,7 +61,8 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
     MatSlideToggleModule,
     MatTableModule,
     MatDividerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [
     MatDatepickerModule

@@ -1,29 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Licenca} from 'src/app/bean/lecenca';
 export interface MenuFlow
 {
   name:string;
 }
-export interface Condicionante
-{
-  id: Number;
-  nome: string;
-  tipo: string;
-  prazo: Date;
-  descricao: string;
-  arquivo_obrigatorio: boolean;
-  tipo_arquivo: string;
-  desc_arquivo: string
-  status: boolean;
-};
 
-export interface Licenca
-{
-  id: Number;
-  nome: string;
-  validade: Date;
-  condicioantes: Condicionante[];
-};
 const ELEMENT_DATA: Licenca[] = [
   {
     id:1,
@@ -65,8 +47,6 @@ export class GerenciarLicencaComponent implements OnInit {
   options: MenuFlow[] = [
     {name:"Visualizar"},{name:"Alterar"},{name:"Excluir"}
   ];
-  
-  expandedElement: Condicionante | null;
   constructor() { }
 
   ngOnInit() {
