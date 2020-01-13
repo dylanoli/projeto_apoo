@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { CadastrarCondicionanteComponent } from './cadastrar-condicionante.component';
+import { CadastrarCondicionanteComponent } from './form-condicionante.component';
 
 describe('CadastrarCondicionanteComponent', () => {
   let component: CadastrarCondicionanteComponent;

@@ -21,26 +21,30 @@ import {MatTableModule} from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { SideMenuComponent } from './utils/side-menu/side-menu.component';
 import { TopMenuComponent } from './utils/top-menu/top-menu.component'
-import { CadastrarCondicionanteComponent } from './condicionantes/cadastrar-condicionante/cadastrar-condicionante.component';
-import { CadastrarLicencaComponent } from './licenca/cadastrar-licenca/cadastrar-licenca.component';
+import { FormCondicionanteComponent } from './condicionantes/form-condicionante/form-condicionante.component';
+import { FormLicencaComponent } from './licenca/form-licenca/form-licenca.component';
 import { GerenciarLicencaComponent } from './licenca/gerenciar-licenca/gerenciar-licenca.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 import { routing } from './app.routing';
+import { NotificationSnackComponent } from './notification-snack/notification-snack.component';
 @NgModule({
   declarations: [
     AppComponent,
     SideMenuComponent,
     TopMenuComponent,
-    CadastrarCondicionanteComponent,
-    CadastrarLicencaComponent,
+    FormCondicionanteComponent,
+    FormLicencaComponent,
     GerenciarLicencaComponent,
-    MenuPrincipalComponent
+    MenuPrincipalComponent,
+    NotificationSnackComponent
   ],
   entryComponents:[
-    CadastrarCondicionanteComponent
+    FormCondicionanteComponent,
+    NotificationSnackComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,8 @@ import { routing } from './app.routing';
     MatTableModule,
     MatDividerModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [
     MatDatepickerModule
