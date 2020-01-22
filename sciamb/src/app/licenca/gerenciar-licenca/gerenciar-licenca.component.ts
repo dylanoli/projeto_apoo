@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Licenca} from 'src/app/bean/lecenca';
 export interface MenuFlow
@@ -39,7 +39,6 @@ const ELEMENT_DATA: Licenca[] = [
   ]
 })
 export class GerenciarLicencaComponent implements OnInit {
-
   dataSource = ELEMENT_DATA;
   displayedColumns: string[] = [
     'id','nome','validade',"opt"

@@ -1,6 +1,7 @@
 <form  #f = ngForm (ngSubmit) = onSubmit(f)>
     <div class="add-cond-dialog">
         <mat-card class="card-cond">
+            {{listCondicionantes}}
             <div class="form-container">
                 <mat-form-field>
                   <input matInput placeholder="Número da condicionante" required name = "id" [(ngModel)] = "condicioante.id" #id>
@@ -36,10 +37,10 @@
                     </mat-card-header>
                     <div class="form-container">
                         <mat-form-field >
-                            <input matInput placeholder="Tipo de documento. Ex: .txt, .pdf, .xml" required name = "tipo_arquivo" [(ngModel)]  = "condicioante.tipo_arquivo">
+                            <input matInput placeholder="Tipo de documento. Ex: .txt, .pdf, .xml" required = "condicioante.arquivo_obrigatorio" [disabled] = "!condicioante.arquivo_obrigatorio"  name = "tipo_arquivo" [(ngModel)]  = "condicioante.tipo_arquivo">
                         </mat-form-field>
                         <mat-form-field>
-                            <textarea matInput placeholder="Instruções adicionais" rows="3" name = "desc_arquivo" [(ngModel)]  = "condicioante.desc_arquivo"></textarea>
+                            <textarea matInput placeholder="Instruções adicionais" rows="3" name = "desc_arquivo" [(ngModel)]  = "condicioante.desc_arquivo" [disabled] = "!condicioante.arquivo_obrigatorio"></textarea>
                         </mat-form-field>
                     </div>
                 </mat-card>
@@ -48,6 +49,6 @@
     </div>
     <div>
         <button mat-raised-button color="warn" class="buttonMain" (click) = "closeCondicionante()">Cancelar</button>
-        <button mat-raised-button color="primary" class="buttonMain" type = "submit">Adicionar</button>
+        <button mat-raised-button color="primary" class="buttonMain" [mat-dialog-close]="this.condicioante" type = "submit" [disabled] = "!f.valid" (click) = "onSubmit()">Adicionar</button>
     </div>
 </form>

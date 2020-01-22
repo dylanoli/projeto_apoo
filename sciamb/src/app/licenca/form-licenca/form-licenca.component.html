@@ -45,8 +45,14 @@
                           <mat-icon>more_vert</mat-icon>
                       </button>
                       <mat-menu #menu="matMenu">
-                          <button mat-menu-item *ngFor = "let option of options">
-                              <span>{{option.name}}</span>
+                          <button mat-menu-item>
+                              <span>Visualizar</span>
+                          </button>
+                          <button mat-menu-item>
+                            <span>Alterar</span>
+                          </button>
+                          <button mat-menu-item (click) = removeCondicionante(element)>
+                            <span>Excluir</span>
                           </button>
                       </mat-menu>    
                   </td>
