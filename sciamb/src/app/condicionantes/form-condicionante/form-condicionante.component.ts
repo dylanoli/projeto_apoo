@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormLicencaComponent } from 'src/app/licenca/form-licenca/form-licenca.component';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import { Condicionante } from 'src/app/bean/condicionante';
+import { Condicionante } from 'src/app/transference-objects/condicionante';
 import { NotificationSnackComponent } from 'src/app/notification-snack/notification-snack.component';
 
 export interface Tipo {
@@ -15,18 +15,7 @@ export interface Tipo {
   styleUrls: ['./form-condicionante.component.css']
 })
 export class FormCondicionanteComponent {
-  condicioante: Condicionante = 
-  {
-    id: null,
-    nome: "",
-    tipo: "",
-    prazo: new Date,
-    descricao: "",
-    arquivo_obrigatorio: false,
-    tipo_arquivo: "",
-    desc_arquivo: "",
-    status: false
-  };
+  condicioante: Condicionante =  new Condicionante();
   anexoChecked = true;
   tipoCondicioante:Tipo[] = [
     {value: "Preventiva", viewValue: "Preventiva"},

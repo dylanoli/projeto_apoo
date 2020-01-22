@@ -1,7 +1,6 @@
-<form  #f = ngForm (ngSubmit) = onSubmit(f)>
+<form  #f = ngForm>
     <div class="add-cond-dialog">
         <mat-card class="card-cond">
-            {{listCondicionantes}}
             <div class="form-container">
                 <mat-form-field>
                   <input matInput placeholder="Número da condicionante" required name = "id" [(ngModel)] = "condicioante.id" #id>
@@ -17,7 +16,7 @@
                   </mat-form-field>
     
                   <mat-form-field>
-                    <input matInput [matDatepicker]="picker" placeholder="Prazo" name = "prazo" [(ngModel)]  = "condicioante.prazo" required>
+                    <input matInput [matDatepicker]="picker" placeholder="Prazo" name = "prazo" [(ngModel)] = "condicioante.prazo" required>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field>
@@ -49,6 +48,6 @@
     </div>
     <div>
         <button mat-raised-button color="warn" class="buttonMain" (click) = "closeCondicionante()">Cancelar</button>
-        <button mat-raised-button color="primary" class="buttonMain" [mat-dialog-close]="this.condicioante" type = "submit" [disabled] = "!f.valid" (click) = "onSubmit()">Adicionar</button>
+        <button mat-raised-button color="primary" class="buttonMain" [mat-dialog-close]="this.condicioante" type = "submit" [disabled] = "!f.valid"  (click) = onSubmit(f)>Adicionar</button>
     </div>
 </form>

@@ -3,7 +3,10 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { FormCondicionanteComponent } from 'src/app/condicionantes/form-condicionante/form-condicionante.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTable } from '@angular/material';
-import { Condicionante } from 'src/app/bean/condicionante';
+import { Condicionante } from 'src/app/transference-objects/condicionante';
+import { Licenca } from 'src/app/transference-objects/licenca';
+import { AngularFireDatabase } from '@angular/fire/database';
+
 export interface MenuFlow
 {
   name:string;
@@ -27,13 +30,14 @@ let ELEMENT_DATA: Condicionante[] = [
 })
 
 export class FormLicencaComponent {
+  licenca: Licenca = new Licenca();
   dataSource = ELEMENT_DATA;
   displayedColumns: string[] = [
     'id','nome','tipo','prazo',"opt"
   ];
-  @ViewChild(MatTable) table: MatTable<any>;
+  @ViewChild(MatTable,{static:false}) table: MatTable<any>;
   
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private _db: AngularFireDatabase) {}
   openCondicionante()
   {
     const dialogRef = this.dialog.open(FormCondicionanteComponent);
@@ -46,6 +50,14 @@ export class FormLicencaComponent {
         this.table.renderRows();
       }
     })
+  }
+  adicionarLicenca(licenca: Licenca)
+  {
+    licenca.condicioantes = this.dataSource;
+    console.log(licenca);
+    this._db.list('licenca').push(licenca).then((result :any) => {
+      console.log(result.key);
+    });
   }
   removeCondicionante(cond:Condicionante)
   {

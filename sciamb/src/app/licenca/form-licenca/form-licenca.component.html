@@ -1,15 +1,15 @@
 <div class="add-cond">
   <mat-card class="card-cond">
-      <form class="form-container">
+      <form class="form-container" #f = ngForm>
           <mat-form-field>
-              <input matInput placeholder="Número da Licença" required>
+              <input matInput placeholder="Número da Licença" required name = "id" [(ngModel)] = "licenca.id">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Nome da Licença" required>
+                <input matInput placeholder="Nome da Licença" required name = "nome" [(ngModel)] = "licenca.nome">
             </mat-form-field>
             <div>
               <mat-form-field style="float: left;">
-                  <input matInput [matDatepicker]="picker" placeholder="Validade" required>
+                  <input matInput [matDatepicker]="picker" placeholder="Validade" required name = "validade" [(ngModel)] = "licenca.validade">
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
@@ -66,7 +66,7 @@
                   <mat-icon>library_add</mat-icon>
               </button>
           </div>
-          <button style="margin-top: 10px;" mat-raised-button color="primary" class="buttonMain">Adicionar Licença</button>
+          <button style="margin-top: 10px;" mat-raised-button color="primary" class="buttonMain" [disabled] = "!f.valid" (click) = adicionarLicenca(licenca)>Adicionar Licença</button>
       </form>
   </mat-card>
 </div>

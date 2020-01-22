@@ -1,4 +1,4 @@
-export interface Condicionante
+export class Condicionante
 {
   id: Number;
   nome: string;

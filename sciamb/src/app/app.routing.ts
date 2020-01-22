@@ -8,7 +8,7 @@ import { FormCondicionanteComponent } from './condicionantes/form-condicionante/
 const APP_ROUTES: Routes = [
     {path:'',component: MenuPrincipalComponent},
     {path:'licenca',component: GerenciarLicencaComponent},
-    {path:'licenca/active',component: FormLicencaComponent},
+    {path:'licenca/form',component: FormLicencaComponent},
     {path:'condicionante',component: FormCondicionanteComponent}
 ];
 

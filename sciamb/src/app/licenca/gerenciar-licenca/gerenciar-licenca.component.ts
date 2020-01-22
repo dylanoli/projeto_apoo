@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import {Licenca} from 'src/app/bean/lecenca';
+import {Licenca} from 'src/app/transference-objects/licenca';
 export interface MenuFlow
 {
   name:string;
