@@ -1,0 +1,14 @@
+.add-cond-dialog
+{
+    overflow-y: auto;
+    height: 400px;
+    margin: auto;
+}
+
+.form-container > * {
+    margin: auto;
+}
+.buttonMain
+{
+    margin: 7px 10px 0px 10px;
+}

@@ -1,0 +1,72 @@
+<div class="add-cond">
+  <mat-card class="card-cond">
+      <form class="form-container" #f = ngForm>
+          <mat-form-field>
+              <input matInput placeholder="Número da Licença" required name = "id" [(ngModel)] = "licenca.id">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Nome da Licença" required name = "nome" [(ngModel)] = "licenca.nome">
+            </mat-form-field>
+            <div>
+              <mat-form-field style="float: left;">
+                  <input matInput [matDatepicker]="picker" placeholder="Validade" required name = "validade" [(ngModel)] = "licenca.validade">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                
+              </div>
+              <h3>Condicionantes</h3>
+              
+            <table mat-table [dataSource]="licenca.condicioantes" class="mat-elevation-z8">
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Número </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="nome">
+                <th mat-header-cell *matHeaderCellDef> Nome </th>
+                <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="tipo">
+                <th mat-header-cell *matHeaderCellDef> Tipo </th>
+                <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="prazo">
+                <th mat-header-cell *matHeaderCellDef> Prazo </th>
+                <td mat-cell *matCellDef="let element">{{element.validade | date:"dd/MM/yyyy"}}</td>
+              </ng-container>
+              
+              <ng-container matColumnDef="opt">
+                  <th mat-header-cell *matHeaderCellDef></th>
+                  <td mat-cell *matCellDef="let element">
+                      <button style="float: right;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                          <mat-icon>more_vert</mat-icon>
+                      </button>
+                      <mat-menu #menu="matMenu">
+                          <button mat-menu-item>
+                              <span>Visualizar</span>
+                          </button>
+                          <button mat-menu-item>
+                            <span>Alterar</span>
+                          </button>
+                          <button mat-menu-item (click) = removeCondicionante(element)>
+                            <span>Excluir</span>
+                          </button>
+                      </mat-menu>    
+                  </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let element; columns: displayedColumns;">
+              </tr>
+            </table>
+            <div>
+              <button style="float: right; margin-top: 5px;" mat-raised-button color="primary" (click) = openCondicionante()>Adicionar
+                  <mat-icon>library_add</mat-icon>
+              </button>
+          </div>
+          <button style="margin-top: 10px;" mat-raised-button color="primary" class="buttonMain" [disabled] = "!f.valid" (click) = adicionarLicenca(licenca)>Adicionar Licença</button>
+      </form>
+  </mat-card>
+</div>

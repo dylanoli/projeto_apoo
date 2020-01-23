@@ -1,0 +1,53 @@
+<form  #f = ngForm>
+    <div class="add-cond-dialog">
+        <mat-card class="card-cond">
+            <div class="form-container">
+                <mat-form-field>
+                  <input matInput placeholder="Número da condicionante" required name = "id" [(ngModel)] = "condicioante.id" #id>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Nome da condicionante" required name = "nome" [(ngModel)]  = "condicioante.nome">
+                </mat-form-field>
+    
+                <mat-form-field>
+                    <mat-select placeholder="Tipo de condicionate" required name = "tipo" [(ngModel)]  = "condicioante.tipo">
+                      <mat-option *ngFor="let tipo of tipoCondicioante" [value]="tipo.value">{{tipo.viewValue}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+    
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Prazo" name = "prazo" [(ngModel)] = "condicioante.prazo" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+    
+                <mat-form-field>
+                  <textarea matInput placeholder="Descrição contida na licença" rows="3" required name = "descricao" [(ngModel)]  = "condicioante.descricao"></textarea>
+                </mat-form-field>
+    
+                <mat-card style="background-color: #F8F8F8;">
+                    <mat-card-header>
+                        <mat-card-title>Documento requisitado para conclusão</mat-card-title>
+                        <section>
+                            <mat-slide-toggle name = "arquivo_obrigatorio" [(ngModel)]  = "condicioante.arquivo_obrigatorio"
+                                [checked]="anexoChecked">
+                            </mat-slide-toggle>
+                          </section>
+                    </mat-card-header>
+                    <div class="form-container">
+                        <mat-form-field >
+                            <input matInput placeholder="Tipo de documento. Ex: .txt, .pdf, .xml" required = "condicioante.arquivo_obrigatorio" [disabled] = "!condicioante.arquivo_obrigatorio"  name = "tipo_arquivo" [(ngModel)]  = "condicioante.tipo_arquivo">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <textarea matInput placeholder="Instruções adicionais" rows="3" name = "desc_arquivo" [(ngModel)]  = "condicioante.desc_arquivo" [disabled] = "!condicioante.arquivo_obrigatorio"></textarea>
+                        </mat-form-field>
+                    </div>
+                </mat-card>
+            </div>
+        </mat-card>
+    </div>
+    <div>
+        <button mat-raised-button color="warn" class="buttonMain" (click) = "closeCondicionante()">Cancelar</button>
+        <button mat-raised-button color="primary" class="buttonMain" [mat-dialog-close]="this.condicioante" type = "submit" [disabled] = "!f.valid"  (click) = onSubmit(f)>Adicionar</button>
+    </div>
+</form>
