@@ -6,6 +6,7 @@ import { MatTable } from '@angular/material';
 import { Condicionante } from 'src/app/transference-objects/condicionante';
 import { Licenca } from 'src/app/transference-objects/licenca';
 import { AngularFireDatabase } from '@angular/fire/database';
+import {Location} from '@angular/common';
 
 export interface MenuFlow
 {
@@ -37,7 +38,7 @@ export class FormLicencaComponent {
   ];
   @ViewChild(MatTable,{static:false}) table: MatTable<any>;
   
-  constructor(public dialog: MatDialog, private _db: AngularFireDatabase) {}
+  constructor(public dialog: MatDialog, private _db: AngularFireDatabase, private _location: Location) {}
   openCondicionante()
   {
     const dialogRef = this.dialog.open(FormCondicionanteComponent);
@@ -58,6 +59,7 @@ export class FormLicencaComponent {
     this._db.list('licenca').push(licenca).then((result :any) => {
       console.log(result.key);
     });
+    this._location.back();
   }
   removeCondicionante(cond:Condicionante)
   {

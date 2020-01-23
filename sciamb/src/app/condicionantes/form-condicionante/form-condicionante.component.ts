@@ -27,7 +27,7 @@ export class FormCondicionanteComponent {
   }
   openSnackBar() {
     this._snackBar.openFromComponent(NotificationSnackComponent, {
-      duration: 2000,
+      duration: 2000
     });
   }
   onSubmit()

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationSnackComponent implements OnInit {
 
-  constructor() { }
+  constructor(public menssage: string) { }
 
   ngOnInit() {
   }

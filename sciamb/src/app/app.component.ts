@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {Location} from '@angular/common';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sciamb';
+  constructor(private _location: Location) 
+  {}
+
+  backClicked() {
+    this._location.back();
+  }
 }
