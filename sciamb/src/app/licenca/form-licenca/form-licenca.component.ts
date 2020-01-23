@@ -7,7 +7,10 @@ import { Condicionante } from 'src/app/transference-objects/condicionante';
 import { Licenca } from 'src/app/transference-objects/licenca';
 import { AngularFireDatabase } from '@angular/fire/database';
 import {Location} from '@angular/common';
-import { LicencaService } from 'src/app/services/licenca.service';
+import { LicencaDBService } from 'src/app/database/licenca-db.service';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 export interface MenuFlow
 {
@@ -32,6 +35,9 @@ let ELEMENT_DATA: Condicionante[] = [
 })
 
 export class FormLicencaComponent {
+
+  state$: Observable<Licenca>;
+
   licenca: Licenca = new Licenca();
   condicionantes: Condicionante[] = [];
 
@@ -40,9 +46,12 @@ export class FormLicencaComponent {
   ];
   @ViewChild(MatTable,{static:false}) table: MatTable<any>;
   
-  constructor(public dialog: MatDialog, private _licencaService: LicencaService, private _location: Location) {}
+  constructor(public dialog: MatDialog, public activatedRoute: ActivatedRoute,  private _licencaService: LicencaDBService, private _location: Location) {}
   ngOnInit() {
     this.licenca.condicioantes = this.condicionantes;
+    
+    this.state$ = this.activatedRoute.paramMap
+      .pipe(map(() => window.history.state));
   }
   openCondicionante()
   {

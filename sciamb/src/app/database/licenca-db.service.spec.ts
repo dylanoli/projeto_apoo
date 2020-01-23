@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LicencaService } from './licenca.service';
+import { LicencaDBService } from './licenca-db.service';
 
 describe('Licenca.ServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: LicencaService = TestBed.get(LicencaService);
+    const service: LicencaDBService = TestBed.get(LicencaDBService);
     expect(service).toBeTruthy();
   });
 });

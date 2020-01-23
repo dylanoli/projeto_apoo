@@ -26,10 +26,16 @@
                             <mat-icon>more_vert</mat-icon>
                         </button>
                         <mat-menu #menu="matMenu">
-                            <button mat-menu-item *ngFor = "let option of options">
-                                <span>{{option.name}}</span>
+                        <button mat-menu-item  routerLink = "form" [state] = "element">
+                                <span>Visualizar</span>
                             </button>
-                        </mat-menu>    
+                            <button mat-menu-item>
+                              <span>Alterar</span>
+                            </button>
+                            <button mat-menu-item>
+                              <span>Excluir</span>
+                            </button>
+                        </mat-menu>   
                     </td>
                 </ng-container>
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

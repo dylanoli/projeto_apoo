@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LicencaService {
+export class LicencaDBService {
   private licencaSource = new BehaviorSubject({licenca:null, key:''});
   currentLicenca = this.licencaSource.asObservable();
   constructor(private _db: AngularFireDatabase) { }
