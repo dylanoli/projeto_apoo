@@ -3,7 +3,7 @@
         <div class="form-container">
             <h3 style="margin-bottom: 5px;">Licenças</h3>
                 
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <table mat-table [dataSource]="licencas | async" class="mat-elevation-z8">
                 <ng-container matColumnDef="id">
                   <th mat-header-cell *matHeaderCellDef> Número </th>
                   <td mat-cell *matCellDef="let element"> {{element.id}} </td>

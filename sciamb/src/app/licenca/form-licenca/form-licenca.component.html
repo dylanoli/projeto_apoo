@@ -17,7 +17,7 @@
               </div>
               <h3>Condicionantes</h3>
               
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <table mat-table [dataSource]="licenca.condicioantes" class="mat-elevation-z8">
               <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef> Número </th>
                 <td mat-cell *matCellDef="let element"> {{element.id}} </td>

@@ -32,7 +32,7 @@ export class FormCondicionanteComponent {
   }
   onSubmit()
   {
-    this.openSnackBar();
+    // this.openSnackBar();
   }
   closeCondicionante()
   {

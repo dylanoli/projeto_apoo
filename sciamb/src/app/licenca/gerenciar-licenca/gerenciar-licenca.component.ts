@@ -1,30 +1,13 @@
 import { Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Licenca} from 'src/app/transference-objects/licenca';
+import { LicencaService } from 'src/app/services/licenca.service';
+import { Observable } from 'rxjs';
+
 export interface MenuFlow
 {
   name:string;
 }
-
-const ELEMENT_DATA: Licenca[] = [
-  {
-    id:1,
-    nome: "Utilizar recursos do rio", 
-    validade: new Date(2023,11,11),
-    condicioantes: [
-      {id:1,nome: "Controle da bomba", tipo: "Preventiva", prazo:new Date(2020,11,11), descricao: "Manter a bomba em boas condições.", arquivo_obrigatorio:true,tipo_arquivo:".pdf",desc_arquivo:"Comprovante de manutenção feita",status:false},
-      {id:2,nome: "Limpeza da água", tipo: "Preventiva", prazo:new Date(2022,11,11), descricao: "Manter a água limpa.", arquivo_obrigatorio:true,tipo_arquivo:".pdf",desc_arquivo:"Comprovante de manutenção feita",status:false}    
-    ]
-  },
-  {
-    id:2,
-    nome: "Ambiente Seguro", 
-    validade: new Date(2021,5,10),
-    condicioantes: [
-      {id:1,nome: "Instalação elétrica", tipo: "Preventiva", prazo:new Date(2020,5,10), descricao: "Possuir um planejamento para instalçao elétrica segundo as normas.", arquivo_obrigatorio:true,tipo_arquivo:".pdf",desc_arquivo:"Mapa de instalação elétrica",status:false}
-    ]
-  },
-];
 
 @Component({
   selector: 'app-gerenciar-licenca',
@@ -39,16 +22,23 @@ const ELEMENT_DATA: Licenca[] = [
   ]
 })
 export class GerenciarLicencaComponent implements OnInit {
-  dataSource = ELEMENT_DATA;
+  licencas: Observable<any>;
   displayedColumns: string[] = [
     'id','nome','validade',"opt"
   ];
   options: MenuFlow[] = [
     {name:"Visualizar"},{name:"Alterar"},{name:"Excluir"}
   ];
-  constructor() { }
+  constructor(private _licencaService: LicencaService) { }
 
   ngOnInit() {
+    this.licencas = this.listarLicencas();
+    console.log(this.licencas);
+  }
+
+  listarLicencas()
+  {
+    return this._licencaService.selectAll();
   }
 
 }

@@ -7,6 +7,7 @@ import { Condicionante } from 'src/app/transference-objects/condicionante';
 import { Licenca } from 'src/app/transference-objects/licenca';
 import { AngularFireDatabase } from '@angular/fire/database';
 import {Location} from '@angular/common';
+import { LicencaService } from 'src/app/services/licenca.service';
 
 export interface MenuFlow
 {
@@ -32,42 +33,43 @@ let ELEMENT_DATA: Condicionante[] = [
 
 export class FormLicencaComponent {
   licenca: Licenca = new Licenca();
-  dataSource = ELEMENT_DATA;
+  condicionantes: Condicionante[] = [];
+
   displayedColumns: string[] = [
     'id','nome','tipo','prazo',"opt"
   ];
   @ViewChild(MatTable,{static:false}) table: MatTable<any>;
   
-  constructor(public dialog: MatDialog, private _db: AngularFireDatabase, private _location: Location) {}
+  constructor(public dialog: MatDialog, private _licencaService: LicencaService, private _location: Location) {}
+  ngOnInit() {
+    this.licenca.condicioantes = this.condicionantes;
+  }
   openCondicionante()
   {
     const dialogRef = this.dialog.open(FormCondicionanteComponent);
-    dialogRef.afterClosed().subscribe(result =>
+    dialogRef.afterClosed().subscribe( (result:Condicionante) =>
     {
+      console.log(this.licenca);
+      console.log(result);
       if(result)
       {
-        this.dataSource.push(result);
-        console.log(this.dataSource);
+        this.licenca.condicioantes.push(result);
         this.table.renderRows();
       }
     })
   }
   adicionarLicenca(licenca: Licenca)
   {
-    licenca.condicioantes = this.dataSource;
-    console.log(licenca);
-    this._db.list('licenca').push(licenca).then((result :any) => {
-      console.log(result.key);
-    });
+    this._licencaService.insert(licenca);
     this._location.back();
   }
   removeCondicionante(cond:Condicionante)
   {
-    let mapCond:number = this.dataSource.map(x => {
+    let mapCond:number = this.licenca.condicioantes.map(x => {
       return x.id;
     }).indexOf(cond.id);
     console.log(mapCond);
-    this.dataSource.splice(mapCond,1);
+    this.licenca.condicioantes.splice(mapCond,1);
     this.table.renderRows();
   }
 }
