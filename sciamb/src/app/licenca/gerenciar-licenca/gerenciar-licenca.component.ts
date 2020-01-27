@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Licenca} from 'src/app/transference-objects/licenca';
-import { LicencaService } from 'src/app/services/licenca.service';
+import { LicencaDBService } from 'src/app/database/licenca-db.service';
 import { Observable } from 'rxjs';
 
 export interface MenuFlow
@@ -29,7 +29,7 @@ export class GerenciarLicencaComponent implements OnInit {
   options: MenuFlow[] = [
     {name:"Visualizar"},{name:"Alterar"},{name:"Excluir"}
   ];
-  constructor(private _licencaService: LicencaService) { }
+  constructor(private _licencaService: LicencaDBService) { }
 
   ngOnInit() {
     this.licencas = this.listarLicencas();
@@ -39,6 +39,11 @@ export class GerenciarLicencaComponent implements OnInit {
   listarLicencas()
   {
     return this._licencaService.selectAll();
+  }
+
+  selecionarLicenca()
+  {
+
   }
 
 }
